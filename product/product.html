@@ -13,7 +13,7 @@
 </head>
 <header class="header">
     <div class="container headerInner">
-        <a href="/index.html"><p class="tittle">MySelfSite</p></a>
+        <a href="/"><p class="tittle">MySelfSite</p></a>
         <input type="text" placeholder="Search" class="search">
         <div class="burger">
             <span></span>
@@ -26,7 +26,7 @@
     </div>
 </header>
 <body>
-    <div class="container">
+    <div class="container vertical">
         <div class="cards">
             <div class="card">
                 <div class="cardHeader ">
@@ -79,7 +79,47 @@
                 </button>
             </div>  
         </div>
+        <div class="specification">
+            <button class="btnUnder"><p class="txtButton">Среды</p></button>
+        </div>
     </div>
+    <span class="modalWindow">
+        <div class="modal">
+            <div class="modalHeader">
+                <p class="txtN">Create card</p>
+            </div>   
+            <div class="modalForm">
+                <form action="" method="POST" class="form">
+                    <div class="modalItem">
+                        <label for="nameItem" class="txtName">Name</label>
+                        <input type="text" placeholder="Boing" class="formItem" id="nameItem" required>
+                    </div>
+                    <div class="modalItem">
+                        <label for="typeItem" class="txtName">Type</label>
+                        <input type="text" placeholder="2224-4324-423423" class="formItem" id="typeItem" required>
+                        
+                    </div>
+                    <div class="modalItem">
+                        <label for="priceItem" class="txtName">Price</label>   
+                        <input type="number" placeholder="299" class="formItem" id="priceItem" required>
+                    </div>
+                    <div class="modalItem">
+                        <label for="dateItem" class="txtName">Date</label>   
+                        <input type="date" class="formItem" id="dateItem" required>
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <label for="desItem" class="txtName">Description</label>   
+                        <textarea  id="desItem" placeholder="Description" class="formItem" cols="33" required></textarea>
+                    </div>
+                    <div class="modalItem">
+                        <label for="fileItem" class="txtName">Photo</label>   
+                        <input type="file" id="fileItem" accept=".jpg, .jpeg, .png" required >
+                    </div>
+                    <button type="submit" class="txtName" id="btnSubmit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </span>
     <script src="/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+{
+  "name": "newproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend.js",
+    "serve": "nodemon backend.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderZarubin/newProject.git"
+  },
+  "keywords": [],
+  "author": "Zarubin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderZarubin/newProject/issues"
+  },
+  "homepage": "https://github.com/AlexanderZarubin/newProject#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^1.35.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
