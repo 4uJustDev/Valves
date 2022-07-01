@@ -38,9 +38,24 @@ const getItem = async (id) => {
 			throw e
 	}
 }
+const getSearchNT = async (info) => {
+	try {
+			const price = info.price
+			const {data, error} = await supabase
+			.from('Item')
+			.select('*')
+			.lte('price', price)
+				
+			if (error) throw error
+			return data
+	} catch (e) {
+			throw e
+	}
+}
 export default {
 	addCard,
 	getAllCards,
-	getItem
+	getItem,
+	getSearchNT
 
 }

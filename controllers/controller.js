@@ -75,10 +75,23 @@ const getEx = async (req, res, next) => {
 			res.sendStatus(500);
 	}
 }
+const getSearch = async (req, res, next) => {
+	const information = req.body
+	if (('price' in information)) {
+		try {
+			const data = await Service.getSearchNT(req.body)
+			res.send(data)
+		} catch(e) {
+				console.error(e);
+				res.sendStatus(500);
+		}
+	}
+}
 
 export default {
 	createCard,
     getCards,
-    getEx
+    getEx,
+    getSearch
 
 }

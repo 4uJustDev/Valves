@@ -14,7 +14,10 @@
 <header class="header">
     <div class="container headerInner">
         <a href="/"><p class="tittle">Vans</p></a>
-        <input type="text" placeholder="Search" class="search">
+        <form action="/filter">
+            <input type="number" placeholder="Искать по цене" class="search" id="inputbtn">
+            <button type="submit" id="searchbtn" class="cstbtn">Искать</button>
+        </form>
         <div class="burger">
             <span></span>
         </div>

@@ -1,3 +1,4 @@
+const searchBtn = document.querySelector('#searchbtn')
 document.addEventListener("DOMContentLoaded", () => {
     fetch('/add', {
             method: "GET"
@@ -6,6 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => getCards(data))
 });
 
+searchBtn.addEventListener('click', search)
+async function search(e) {
+	e.preventDefault()
+	const inputName = document.querySelector('#inputbtn')
+	const jsonReq = {}
+    jsonReq.price = inputName.value
+    if (("price" in jsonReq) || ("type" in jsonReq)){
+        console.log(jsonReq)
+    }
+	const response = await request('/', 'POST', jsonReq)
+	let newInfo = await response.json()
+	getCards(newInfo)
+}
 
 function getCards(items) {
     const itemArray = document.querySelector('.cards')
@@ -38,7 +52,7 @@ function getCards(items) {
                     </div>
                     <div class="cardFooter">
                         <div class="collect">
-                            <p>${item.model}</p>
+                            <p>${item.price} руб</p>
                         </div>  
                         <div class="likeShare">
                             <button class="likes">  
@@ -57,4 +71,24 @@ function getCards(items) {
         itemArray.append(itemBlock);
         // console.log(item);
     })
+}
+async function request(url, method = 'GET', data = null) {
+    try {
+        const headers = {};
+        let body;
+
+        if (data) {
+            headers['Content-Type'] = 'application/json';
+            body = JSON.stringify(data);
+        }
+        // console.log('req:', body);
+        const response = await fetch(url, {
+            method,
+            headers,
+            body
+        })
+        return await response;
+    } catch (e) {
+        console.warn(`Erorr: ${e.message}`);
+    }
 }
