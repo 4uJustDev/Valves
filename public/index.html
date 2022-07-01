@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Inconsolata&family=Joan&display=swap" rel="stylesheet">
+    <title>Vans</title>
+</head>
+<header class="header">
+    <div class="container headerInner">
+        <a href="/"><p class="tittle">Vans</p></a>
+        <input type="text" placeholder="Search" class="search">
+        <div class="burger">
+            <span></span>
+        </div>
+        <ul class="menu">
+            <li><a href="#" class="menuItem">About Us</a></li>
+            <li><button class="menuItem" id="btnCreate">Create</button></li>
+            <li><a href="#" class="menuItem">Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div class="cards">
+        </div>      
+    </div>
+    <div class="modalWindow">
+        <div class="modal">
+            <div class="modalHeader">
+                <p class="txtN">Создание карточки</p>
+            </div>   
+            <div class="modalForm">
+                <form action="/add" method="POST" class="form" enctype='multipart/form-data'>
+                    <div class="modalItem">
+                        <label for="nameItem" class="txtName">Наименование</label>
+                        <input type="text" placeholder="Клапан" class="formItem" id="nameItem" name="name" value="1234456">
+                    </div>
+                    <div class="modalItem">
+                        <label for="typeItem" class="txtName">Модель</label>
+                        <input type="text" placeholder="15Б3п" class="formItem" id="typeItem" name="model" value="model">
+                        
+                    </div>
+                    <div class="modalItem">
+                        <label for="typeItem" class="txtName">Тип</label>
+                        <input type="text" placeholder="муфтовый" class="formItem" id="typeItem" name="type" value="type">
+                        
+                    </div>
+                    <div class="modalItem">
+                        <label for="priceItem" class="txtName">Цена</label>   
+                        <input type="number" placeholder="199" class="formItem" id="priceItem" name="price" value="1234456">
+                    </div>
+                    <div class="modalItem">
+                        <label for="dateItem" class="txtName">Дата</label>   
+                        <input type="date" class="formItem" id="dateItem" name="date">
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <label for="desItem" class="txtName">Описание</label>   
+                        <textarea  id="desItem" placeholder="Описание..." class="formItem" name="description" cols="33"></textarea>
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <p class="txtName">Характеристики</p>
+                        <ul id="modalcharacteristic" class="modalList">
+                            <li class="liClassification">Масса: <input type="number" name="massa" id="inputMass" placeholder="220" class="inputModal">гр</li>
+                            <li class="liClassification">Материал: <input type="text" name="material" id="inputMaterial" placeholder="Латунь ЛЦ40Сд" class="inputModal"></li>
+                            <li class="liClassification">Привод: <input type="text" name="run" id="inputRun" placeholder="Ручной при помощи маховика" class="inputModal"></li>
+                            <li class="liClassification">Рабочая температура: 0… +<input type="number" name="temp" id="inputTemp" placeholder="200" class="inputModal">&#176;C</li>
+                            <li class="liClassification">Условный диаметр: <input type="number" name="diam" id="inputDiam" placeholder="15" class="inputModal">mm</li>
+                        </ul>   
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <label for="oblastItem" class="txtName">Область применения</label>   
+                        <textarea  id="oblastItem" name="oblast"  placeholder="Вентиль чаще устанавливают на..." class="formItem" cols="33"></textarea>
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <label for="srediItem" class="txtName">Среды</label>   
+                        <textarea  id="srediItem" name="eviroment" placeholder="Воздух,Вода,Пар" class="formItem" cols="33"></textarea>
+                    </div>
+                    <div class="modalItem" id="customForm">
+                        <label for="proizItem" class="txtName">Производитель</label>   
+                        <textarea  id="proizItem" name="manuName" placeholder="Газпром" class="formItem" cols="33"></textarea>
+                        <input type="text" name="manuLink" id="proizLink" placeholder="http://gazprom.com"  class="inputModal">
+                    </div>
+                    <div class="modalItem">
+                        <label for="fileItem" class="txtName">Фото</label>   
+                        <input type="file" id="fileItem" name="file" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <!-- <div class="modalItem">
+                        <label for="documentItem" class="txtName">Документ</label>   
+                        <input type="file" id="documentItem" name="document" accept=".pdf, .docx">
+                    </div>     -->
+                    <button type="submit" class="txtName" id="btnSubmit">Создать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+    <script src="/burger.js"></script>
+    <script src="/scripts/addCards.js"></script>
+</body>
+
+</html>
