@@ -42,25 +42,25 @@
                 <form action="/add" method="POST" class="form" enctype='multipart/form-data'>
                     <div class="modalItem">
                         <label for="nameItem" class="txtName">Наименование</label>
-                        <input type="text" placeholder="Клапан" class="formItem" id="nameItem" name="name" value="1234456">
+                        <input type="text" placeholder="Клапан" class="formItem" id="nameItem" name="name" required>
                     </div>
                     <div class="modalItem">
                         <label for="typeItem" class="txtName">Модель</label>
-                        <input type="text" placeholder="15Б3п" class="formItem" id="typeItem" name="model" value="model">
+                        <input type="text" placeholder="15Б3п" class="formItem" id="typeItem" name="model" required>
                         
                     </div>
                     <div class="modalItem">
                         <label for="typeItem" class="txtName">Тип</label>
-                        <input type="text" placeholder="муфтовый" class="formItem" id="typeItem" name="type" value="type">
+                        <input type="text" placeholder="муфтовый" class="formItem" id="typeItem" name="type" required>
                         
                     </div>
                     <div class="modalItem">
                         <label for="priceItem" class="txtName">Цена</label>   
-                        <input type="number" placeholder="199" class="formItem" id="priceItem" name="price" value="1234456">
+                        <input type="number" placeholder="199" class="formItem" id="priceItem" name="price" required>
                     </div>
                     <div class="modalItem">
                         <label for="dateItem" class="txtName">Дата</label>   
-                        <input type="date" class="formItem" id="dateItem" name="date">
+                        <input type="date" class="formItem" id="dateItem" name="date" required>
                     </div>
                     <div class="modalItem" id="customForm">
                         <label for="desItem" class="txtName">Описание</label>   
@@ -91,7 +91,7 @@
                     </div>
                     <div class="modalItem">
                         <label for="fileItem" class="txtName">Фото</label>   
-                        <input type="file" id="fileItem" name="file" accept=".jpg, .jpeg, .png">
+                        <input type="file" id="fileItem" name="file" accept=".jpg, .jpeg, .png" required>
                     </div>
                     <!-- <div class="modalItem">
                         <label for="documentItem" class="txtName">Документ</label>   
